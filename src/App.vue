@@ -36,8 +36,8 @@
       <button @click="add(1)">+1</button>
     </div>
     <div class="divider">路由</div>
-    <router-link to="/about">about</router-link>
-    <router-link to="/home">home</router-link>
+    <router-link to="/about" active-class="active">about</router-link>
+    <router-link to="/home" active-class="active">home</router-link>
     <router-view></router-view>
   </div>
 </template>
@@ -56,6 +56,9 @@ export default {
   name: 'App',
   components: {
     MyList, MyHeader, MyTranslation, MyTranslation2, mySolt
+  },
+  mounted() {
+    window.currentthis = this;
   },
   data() {
     return {
@@ -113,5 +116,8 @@ export default {
 
 img {
   width: 100%;
+}
+.active {
+  color: red;
 }
 </style>

@@ -4,11 +4,27 @@ export default new VueRouter({
     routes: [
         {
             path: '/about',
-            component: () => import('../components/about.vue'),
+            component: () => import('../pages/about.vue'),
         },
         {
             path: '/home',
-            component: () => import('../components/home.vue'),
+            component: () => import('../pages/home.vue'),
+            children: [
+                {
+                    path: 'news',
+                    component: () => import('../pages/news.vue')
+                },
+                {
+                    path: 'news2',
+                    component: () => import('../pages/news2.vue'),
+                    children: [
+                        {
+                            path: 'detail',
+                            component: () => import('../pages/detail.vue')
+                        }
+                    ]
+                }
+            ]
         },
     ]
 })

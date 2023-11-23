@@ -9,7 +9,11 @@ export default {
 </script>
 
 <template>
-<div class="home"></div>
+<div class="home">
+  <router-link to="/home/news">新闻</router-link>
+  <router-link to="/home/news2">新闻2</router-link>
+  <router-view></router-view>
+</div>
 </template>
 
 <style scoped>
